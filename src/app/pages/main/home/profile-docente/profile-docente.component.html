@@ -8,4 +8,10 @@
   </ion-button>
   <br>
   <qrcode [qrdata]="codigoQr" [width]="400"></qrcode>
+</section>
+
 <section>
+  <ion-grid>
+    <ion-button (click)="escanearQr()" >Escanear Codigo</ion-button>
+  </ion-grid>
+</section>

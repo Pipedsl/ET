@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from 'src/app/services/photo.service';
 
 @Component({
   selector: 'app-profile-docente',
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileDocenteComponent  implements OnInit {
   codigoQr:any;
 
-  constructor() { }
+  constructor(
+    private photoService: PhotoService
+  ) { }
 
   ngOnInit() {}
 
@@ -16,4 +19,11 @@ export class ProfileDocenteComponent  implements OnInit {
     this.codigoQr = 'https://github.com/Pipedsl/ET.git';
   }
 
+  public async escanearQr() {
+    const imagenWebPath = await this.photoService.abrirCamara();
+
+    if (imagenWebPath) {
+      this.codigoQr = imagenWebPath;
+    }
+  }
 }
