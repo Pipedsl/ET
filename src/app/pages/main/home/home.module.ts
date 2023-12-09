@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { ProfileDocenteComponent } from './profile-docente/profile-docente.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 // Se importa el modulo para el códigoQR
 import { QRCodeModule } from 'angularx-qrcode';
@@ -19,7 +20,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SharedModule,
   ],
   declarations: [
     HomePage,
