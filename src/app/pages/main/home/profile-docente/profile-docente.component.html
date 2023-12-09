@@ -13,5 +13,9 @@
 <section>
   <ion-grid>
     <ion-button (click)="escanearQr()" >Escanear Codigo</ion-button>
+    <a *ngIf="resultadoScan" [href]="resultadoScan" target="_blank">{{ resultadoScan }}</a>
+  </ion-grid>
+  <ion-grid>
+    <ion-text> Enlace: {{ resultadoScan }} </ion-text>
   </ion-grid>
 </section>

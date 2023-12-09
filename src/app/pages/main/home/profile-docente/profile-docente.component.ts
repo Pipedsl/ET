@@ -8,6 +8,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class ProfileDocenteComponent  implements OnInit {
   codigoQr:any;
+  resultadoScan: string = '';
 
   constructor(
     private photoService: PhotoService
@@ -22,8 +23,12 @@ export class ProfileDocenteComponent  implements OnInit {
   public async escanearQr() {
     const imagenWebPath = await this.photoService.abrirCamara();
 
+    let linkCodigo: string = '';
+
     if (imagenWebPath) {
-      this.codigoQr = imagenWebPath;
+      linkCodigo = imagenWebPath;
     }
+
+    this.resultadoScan = linkCodigo;
   }
 }
